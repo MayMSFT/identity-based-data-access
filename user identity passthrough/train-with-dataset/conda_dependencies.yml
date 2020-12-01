@@ -1,0 +1,13 @@
+
+dependencies:
+- python=3.6.2
+- scikit-learn
+- pip:
+  - packaging
+  - nltk
+  - azureml-core==0.1.0.26419284
+  - --extra-index-url https://azuremlsdktestpypi.azureedge.net/DataDrift-SDK-Unit/26419284
+  - azureml-telemetry==1.6.0
+  - azureml-dataprep[pandas]==2.7.0.dev0+e4ddba8
+  - --extra-index-url https://dataprepdownloads.azureedge.net/pypi/test-M3ME5B1GMEM3SW0W/26411269/
+  - --pre
