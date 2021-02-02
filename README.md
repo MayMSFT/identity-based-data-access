@@ -6,8 +6,18 @@ This private preview feature aims to:
 [Sample notebook using estimator](./compute-identity/train-with-estimator/)<br>
 [Sample notebook using pipeline](./compute-identity/multi-step-pipelines/)
 3. Enable credential passthrough for granular data access control. For workspace shared by users with different level of data access permission, it is now possible to always authenticate data access with users' AAD token. Admin only needs to manage access control at storage (e.g. adlsgen2). AzureML will passthrough users' AAD token for both interactive experiment and training on remote compute. <br>
-**NOTE**: For private preview, we only support ScriptRun on AML compute for ADLS Gen2 storage. We will expand support for automl, pipelines in public preview. Whitelisting is reqruied to enable credential passthrough. Please reach out to May Hu (sihhu@microsoft.com) to participate. <br>
-[Sample notebook using Script Run](./user-identity-passthrough/train-with-datasets)
+**NOTE**: For private preview, we only support ScriptRun on AML compute* for ADLS Gen2 storage. We will expand support for automl, pipelines in public preview. Whitelisting is reqruied to enable credential passthrough. Please reach out to May Hu (sihhu@microsoft.com) to participate. <br>
+*AML compute (Compute clusters) backed with all VM skus **EXCEPT** the following skus:
+    - "standard_nc24r" 
+    - "standard_a8" 
+    - "standard_a9" 
+    - "standard_h16r" 
+    - "standard_h16mr" 
+    - "standard_nc24rs_v2" 
+    - "standard_nc24rs_v3" 
+    - "standard_nd24rs" 
+
+    [Sample notebook using Script Run](./user-identity-passthrough/train-with-datasets)
 
 How data access authenticaiton works:
 ![flow](authentication.jpg)
